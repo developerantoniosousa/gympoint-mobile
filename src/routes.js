@@ -1,3 +1,5 @@
+import React from 'react';
+import styled from 'styled-components/native';
 import { createAppContainer, createSwitchNavigator } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
 import { createBottomTabNavigator } from 'react-navigation-tabs';
@@ -8,16 +10,57 @@ import AnswerList from '~/screens/AnswerList';
 import Answer from '~/screens/Answer';
 import Question from '~/screens/Question';
 
+import logoHorizontal from '~/assets/images/logo-horizontal.png';
+const Logo = styled.Image.attrs({
+  resizeMode: 'contain'
+})`
+  width: 116px;
+`;
+
 export default signed => createAppContainer(
   createSwitchNavigator({
     SignIn,
     User: createBottomTabNavigator({
-      Checkins,
-      Answers: createStackNavigator({
-        AnswerList,
-        Answer,
-        Question,
-      }),
+      Dashboard: {
+        screen: createStackNavigator({
+          Checkins,
+        }, {
+          headerLayoutPreset: 'center',
+          defaultNavigationOptions: {
+            headerTitle: <Logo source={logoHorizontal} />
+          }
+        }),
+        navigationOptions: {
+          title: 'Check-ins'
+        }
+      },
+      Answers: {
+        screen: createStackNavigator({
+          AnswerList,
+          Answer,
+          Question,
+        }, {
+          headerLayoutPreset: 'center',
+          defaultNavigationOptions: {
+            headerTitle: <Logo source={logoHorizontal} />
+          }
+        }),
+        navigationOptions: {
+          title: 'Pedir ajuda'
+        }
+      }
+    }, {
+      tabBarOptions: {
+        activeTintColor: '#EE4E62',
+        inactiveTintColor: '#999999',
+        labelStyle: {
+          fontFamily: 'Roboto-Regular',
+          fontStyle: 'normal',
+          fontWeight: 'normal',
+          fontSize: 14,
+          lineHeight: 16,
+        }
+      }
     }),
   }, {
     initialRouteName: signed ? 'User' : 'SignIn'
