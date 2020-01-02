@@ -8,7 +8,7 @@ import SignIn from '~/screens/SignIn';
 import Checkins from '~/screens/Checkins';
 import AnswerList from '~/screens/AnswerList';
 import Answer from '~/screens/Answer';
-import Question from '~/screens/Question';
+import NewQuestion from '~/screens/NewQuestion';
 
 import logoHorizontal from '~/assets/images/logo-horizontal.png';
 const Logo = styled.Image.attrs({
@@ -27,6 +27,7 @@ export default signed => createAppContainer(
         }, {
           headerLayoutPreset: 'center',
           defaultNavigationOptions: {
+            headerTintColor: '#EE4E62',
             headerTitle: <Logo source={logoHorizontal} />
           }
         }),
@@ -38,10 +39,11 @@ export default signed => createAppContainer(
         screen: createStackNavigator({
           AnswerList,
           Answer,
-          Question,
+          NewQuestion,
         }, {
           headerLayoutPreset: 'center',
           defaultNavigationOptions: {
+            headerTintColor: '#EE4E62',
             headerTitle: <Logo source={logoHorizontal} />
           }
         }),
