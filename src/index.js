@@ -1,9 +1,19 @@
+
 import React from 'react';
+import { Provider } from 'react-redux';
+import { PersistGate } from 'redux-persist/integration/react';
 
-import Routes from './routes';
+import './config/reactotron';
 
-export default function App() {
+import App from './App';
+import { store, persistor } from './store';
+
+export default function Index() {
   return (
-    <Routes />
+    <Provider store={store}>
+      <PersistGate persistor={persistor}>
+        <App />
+      </PersistGate>
+    </Provider>
   );
 }

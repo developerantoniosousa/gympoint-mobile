@@ -8,7 +8,7 @@ import AnswerList from '~/screens/AnswerList';
 import Answer from '~/screens/Answer';
 import Question from '~/screens/Question';
 
-export default createAppContainer(
+export default signed => createAppContainer(
   createSwitchNavigator({
     SignIn,
     User: createBottomTabNavigator({
@@ -19,5 +19,7 @@ export default createAppContainer(
         Question,
       }),
     }),
+  }, {
+    initialRouteName: signed ? 'User' : 'SignIn'
   }),
 );
