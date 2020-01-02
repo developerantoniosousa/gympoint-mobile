@@ -41,16 +41,22 @@ function QuestionList({ navigation, isFocused }) {
 
   return (
     <Container>
-      <Button style={{ marginVertical: 20 }} title="Novo pedido de auxílio" onPress={() => navigation.navigate('NewQuestion')} />
+      <Button
+        style={{ marginVertical: 20 }}
+        title="Novo pedido de auxílio"
+        onPress={() => navigation.navigate('NewQuestion')}
+      />
       {loadingQuestions ?
         <ActivityIndicator size="small" color="#333" /> : (
           <List
             data={questions}
             keyExtractor={item => String(item.id)}
             renderItem={({ item: question }) => (
-              <QuestionContainer onPress={() => { }}>
+              <QuestionContainer onPress={() => navigation.navigate('Question', { question })}>
                 <QuestionHeader>
-                  <QuestionStatus answer={question.answer}>{question.answer ? 'Respondido' : 'Sem resposta'}</QuestionStatus>
+                  <QuestionStatus answer={question.answer}>
+                    {question.answer ? 'Respondido' : 'Sem resposta'}
+                  </QuestionStatus>
                   <QuestionDate>{question.formattedDate}</QuestionDate>
                 </QuestionHeader>
                 <Question>{question.question}</Question>
