@@ -3,6 +3,7 @@ import React from 'react';
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
 
+import './config/statusbar';
 import './config/reactotron';
 
 import App from './App';
