@@ -6,8 +6,8 @@ import { createBottomTabNavigator } from 'react-navigation-tabs';
 
 import SignIn from '~/screens/SignIn';
 import Checkins from '~/screens/Checkins';
-import AnswerList from '~/screens/AnswerList';
-import Answer from '~/screens/Answer';
+import QuestionList from '~/screens/QuestionList';
+import Question from '~/screens/Question';
 import NewQuestion from '~/screens/NewQuestion';
 
 import logoHorizontal from '~/assets/images/logo-horizontal.png';
@@ -37,8 +37,8 @@ export default signed => createAppContainer(
       },
       Answers: {
         screen: createStackNavigator({
-          AnswerList,
-          Answer,
+          QuestionList,
+          Question,
           NewQuestion,
         }, {
           headerLayoutPreset: 'center',
