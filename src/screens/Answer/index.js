@@ -8,3 +8,7 @@ export default function Answer() {
     <View />
   );
 }
+
+Answer.navigationOptions = {
+  title: 'Pedir ajuda'
+}
