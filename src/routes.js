@@ -27,6 +27,7 @@ export default signed => createAppContainer(
         }, {
           headerLayoutPreset: 'center',
           defaultNavigationOptions: {
+            headerBackTitleVisible: false,
             headerTintColor: '#EE4E62',
             headerTitle: <Logo source={logoHorizontal} />
           }
@@ -43,6 +44,7 @@ export default signed => createAppContainer(
         }, {
           headerLayoutPreset: 'center',
           defaultNavigationOptions: {
+            headerBackTitleVisible: false,
             headerTintColor: '#EE4E62',
             headerTitle: <Logo source={logoHorizontal} />
           }
