@@ -1,28 +1,28 @@
 # Gympoint Mobile
 
-## instalação
+## installation
 
-# Baixe o projeto
+# Download the project
 
 ```
 $ git clone https://github.com/developerantoniosousa/gympoint-mobile
 ```
 
-Defina as variáveis ambiente, basta fazer uma cópia do arquivo .env.example para .env e definir as suas configurações.
+Set the environment variables; simply copy the .env.example file to .env and define your settings.
 
-# Instalação das dependências
+# Installing the dependencies
 
 ```
 $ yarn install
 ```
 
-# Executando a aplicação
+# Running the application
 
 ```
 $ react-native run-android
 ```
 
-ou
+or
 
 ```
 $ react-native run-ios
